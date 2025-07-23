@@ -58,7 +58,7 @@ An AI-powered web application that analyzes skill gaps between resumes and job d
    ```
 
 5. **Access the app**
-   - Open your browser and go to `http://localhost:8501`
+   - Open your browser and go to `https://chandanagangaraju-skillshift-real-time-skill-gap-ana-app-2yq5dk.streamlit.app/`
 
 ## 📖 Usage
 
