@@ -9,4 +9,6 @@ pandas
 fpdf
 kaleido
 requests
-beautifulsoup4 
+beautifulsoup4
+plotly
+reportlab 
