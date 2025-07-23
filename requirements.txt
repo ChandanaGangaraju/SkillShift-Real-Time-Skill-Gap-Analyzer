@@ -1,0 +1,12 @@
+streamlit
+pdfplumber
+python-docx
+spacy
+sentence-transformers
+openai
+numpy
+pandas
+fpdf
+kaleido
+requests
+beautifulsoup4 

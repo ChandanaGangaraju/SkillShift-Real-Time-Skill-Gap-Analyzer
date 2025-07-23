@@ -1,0 +1,345 @@
+/* SkillShift Custom Styles */
+
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+
+/* Custom CSS Variables */
+:root {
+    --primary-color: #6366f1;
+    --primary-dark: #4f46e5;
+    --secondary-color: #8b5cf6;
+    --accent-color: #06b6d4;
+    --success-color: #10b981;
+    --warning-color: #f59e0b;
+    --error-color: #ef4444;
+    --background-light: #f8fafc;
+    --background-dark: #1e293b;
+    --text-primary: #1e293b;
+    --text-secondary: #64748b;
+    --border-color: #e2e8f0;
+    --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+    --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+    --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+}
+
+/* Global Styles */
+.main {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    padding: 1rem;
+}
+
+/* Streamlit container improvements */
+.main .block-container {
+    max-width: 1200px;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+}
+
+/* Custom Logo Styling */
+.logo-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 2rem;
+}
+
+.logo {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: white;
+    width: 80px;
+    height: 80px;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 2rem;
+    font-weight: 700;
+    box-shadow: var(--shadow-lg);
+    position: relative;
+    overflow: hidden;
+}
+
+.logo::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(45deg, transparent, rgba(255,255,255,0.1), transparent);
+    transform: rotate(45deg);
+    animation: shine 3s infinite;
+}
+
+@keyframes shine {
+    0% { transform: translateX(-100%) translateY(-100%) rotate(45deg); }
+    50% { transform: translateX(100%) translateY(100%) rotate(45deg); }
+    100% { transform: translateX(-100%) translateY(-100%) rotate(45deg); }
+}
+
+/* Header Styling */
+.main h1 {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-weight: 700;
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 0.5rem;
+}
+
+.main h2 {
+    color: var(--text-primary);
+    font-weight: 600;
+    font-size: 1.5rem;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid var(--border-color);
+}
+
+.main h3 {
+    color: var(--text-primary);
+    font-weight: 500;
+    font-size: 1.25rem;
+    margin-top: 1.5rem;
+    margin-bottom: 0.75rem;
+}
+
+/* Improve text alignment */
+.main p {
+    text-align: left;
+    line-height: 1.6;
+}
+
+.main .stMarkdown {
+    text-align: left;
+}
+
+/* Card-like containers */
+.section-container {
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 12px;
+    padding: 1.5rem;
+    margin: 1rem 0;
+    box-shadow: var(--shadow-sm);
+    border: 1px solid var(--border-color);
+}
+
+/* File uploader styling */
+.stFileUploader {
+    border: 2px dashed var(--primary-color);
+    border-radius: 12px;
+    padding: 2rem;
+    text-align: center;
+    background: var(--background-light);
+    transition: all 0.3s ease;
+}
+
+.stFileUploader:hover {
+    border-color: var(--secondary-color);
+    background: white;
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-lg);
+}
+
+/* Text area styling */
+.stTextArea textarea {
+    border: 2px solid var(--border-color);
+    border-radius: 12px;
+    padding: 1rem;
+    font-family: 'Inter', sans-serif;
+    transition: all 0.3s ease;
+}
+
+.stTextArea textarea:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
+}
+
+/* Button styling */
+.stButton > button {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: white;
+    border: none;
+    border-radius: 12px;
+    padding: 0.75rem 2rem;
+    font-weight: 600;
+    font-family: 'Inter', sans-serif;
+    transition: all 0.3s ease;
+    box-shadow: var(--shadow-sm);
+}
+
+.stButton > button:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-lg);
+    background: linear-gradient(135deg, var(--primary-dark), var(--secondary-color));
+}
+
+/* Progress bar styling */
+.stProgress > div > div {
+    background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+    border-radius: 8px;
+}
+
+/* Progress bar text styling - make headings look like normal text */
+.stProgress .stText {
+    color: var(--text-primary) !important;
+    font-weight: normal !important;
+    font-size: 1rem !important;
+}
+
+/* Ensure progress bar labels are readable */
+.stProgress label {
+    color: var(--text-primary) !important;
+    font-weight: normal !important;
+    font-size: 1rem !important;
+}
+
+/* Remove any special styling from progress bar headings */
+.stProgress h3, .stProgress h4 {
+    color: var(--text-primary) !important;
+    font-weight: normal !important;
+    background: none !important;
+    -webkit-background-clip: unset !important;
+    -webkit-text-fill-color: unset !important;
+}
+
+/* Override Streamlit default styling for skill display */
+.stMarkdown .skill-tags-container {
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: wrap !important;
+}
+
+.stMarkdown .skill-tags-container p {
+    display: inline-block !important;
+    margin: 0.25rem !important;
+}
+
+/* Success/Warning/Error message styling */
+.element-container .stSuccess {
+    background: linear-gradient(135deg, var(--success-color), #34d399);
+    color: white;
+    border-radius: 12px;
+    padding: 1rem;
+    border: none;
+    box-shadow: var(--shadow-sm);
+}
+
+.element-container .stWarning {
+    background: linear-gradient(135deg, var(--warning-color), #fbbf24);
+    color: white;
+    border-radius: 12px;
+    padding: 1rem;
+    border: none;
+    box-shadow: var(--shadow-sm);
+}
+
+.element-container .stError {
+    background: linear-gradient(135deg, var(--error-color), #f87171);
+    color: white;
+    border-radius: 12px;
+    padding: 1rem;
+    border: none;
+    box-shadow: var(--shadow-sm);
+}
+
+/* Info message styling */
+.element-container .stInfo {
+    background: linear-gradient(135deg, var(--accent-color), #22d3ee);
+    color: white;
+    border-radius: 12px;
+    padding: 1rem;
+    border: none;
+    box-shadow: var(--shadow-sm);
+}
+
+/* Code block styling */
+.stCode {
+    background: var(--background-dark);
+    color: #e2e8f0;
+    border-radius: 8px;
+    padding: 1rem;
+    font-family: 'JetBrains Mono', monospace;
+    border: 1px solid var(--border-color);
+}
+
+/* Footer styling */
+.footer {
+    text-align: center;
+    padding: 2rem 0;
+    color: var(--text-secondary);
+    font-size: 0.875rem;
+    border-top: 1px solid var(--border-color);
+    margin-top: 3rem;
+}
+
+/* Skill tags styling */
+.skill-tag {
+    display: inline-block !important;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: white;
+    padding: 0.25rem 0.75rem;
+    border-radius: 20px;
+    font-size: 0.875rem;
+    font-weight: 500;
+    margin: 0.25rem !important;
+    box-shadow: var(--shadow-sm);
+    float: none !important;
+    clear: none !important;
+}
+
+/* Skill tags container for side-by-side layout */
+.skill-tags-container {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    gap: 0.5rem !important;
+    margin: 1rem 0 !important;
+    flex-direction: row !important;
+}
+
+.skill-tags-container span {
+    display: inline-block !important;
+    margin: 0.25rem !important;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .main h1 {
+        font-size: 2rem;
+    }
+    
+    .section-container {
+        padding: 1rem;
+        margin: 0.5rem 0;
+    }
+    
+    .logo {
+        width: 60px;
+        height: 60px;
+        font-size: 1.5rem;
+    }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--background-light);
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(135deg, var(--primary-dark), var(--secondary-color));
+} 
